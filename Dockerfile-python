@@ -1,0 +1,7 @@
+ARG BASE_IMAGE=python:3
+FROM ${BASE_IMAGE}
+LABEL maintainer "kokororin <i@kotori.love>"
+
+RUN pip3 config set global.index-url https://mirrors.aliyun.com/pypi/simple
+
+RUN pip3 install pylint
