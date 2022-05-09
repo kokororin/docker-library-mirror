@@ -29,7 +29,7 @@ jobs:
       - name: Prepare
         id: prepare
         run: |
-          DOCKER_IMAGE=kokororin/library-image-mirror
+          DOCKER_IMAGE=kokororin/library-mirror
           TEMP="${{ matrix.docker-file.tags }}"
           TAGZ=($TEMP)
           VERSION=${TAGZ[0]}
