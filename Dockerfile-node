@@ -2,11 +2,8 @@ ARG BASE_IMAGE=node:14
 FROM ${BASE_IMAGE}
 LABEL maintainer "kokororin <i@kotori.love>"
 
-RUN npm config set registry https://registry.npmmirror.com \
-    npm config set sass_binary_site https://npmmirror.com/mirrors/node-sass \
-    npm config set phantomjs_cdnurl https://npmmirror.com/mirrors/phantomjs \
-    npm config set electron_mirror https://npmmirror.com/mirrors/electron/ \
-    npm config set electron_builder_binaries_mirror https://npmmirror.com/mirrors/electron-builder-binaries/
+ADD https://raw.githubusercontent.com/kokororin/dotfiles/master/.npmrc /root/
 
-RUN npm install -g cnpm@latest \
+RUN npm install -g npm@latest \
+    npm install -g cnpm@latest \
     npm install -g pnpm@latest
