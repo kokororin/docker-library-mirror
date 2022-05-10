@@ -12,14 +12,44 @@ jobs:
         docker-file:
           - path: .
             file-name: Dockerfile-node
+            base-img: node:12-alpine
+            tags: "node-12-alpine"
+            platforms: linux/amd64,linux/arm64
+
+          - path: .
+            file-name: Dockerfile-node
             base-img: node:14-alpine
             tags: "node-14-alpine"
-            platforms: linux/amd64
+            platforms: linux/amd64,linux/arm64
+
+          - path: .
+            file-name: Dockerfile-node
+            base-img: node:16-alpine
+            tags: "node-16-alpine"
+            platforms: linux/amd64,linux/arm64
 
           - path: .
             file-name: Dockerfile-python
             base-img: python:3.6
             tags: "python-3.6"
+            platforms: linux/amd64
+
+          - path: .
+            file-name: Dockerfile-python
+            base-img: python:3.7
+            tags: "python-3.7"
+            platforms: linux/amd64
+
+          - path: .
+            file-name: Dockerfile-python
+            base-img: python:3.8
+            tags: "python-3.8"
+            platforms: linux/amd64
+
+          - path: .
+            file-name: Dockerfile-python
+            base-img: python:3.9
+            tags: "python-3.9"
             platforms: linux/amd64
 
     steps:
